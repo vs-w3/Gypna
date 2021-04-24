@@ -1,0 +1,8 @@
+@import url("nt-colors.css");
+
+.gypna-main-sec-1 {
+    background-image: url("/assets/img/main-bg-section-1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
