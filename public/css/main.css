@@ -6,3 +6,31 @@
     background-size: contain;
     background-position: center;
 }
+
+.gypna-about-us-mission-img {
+    background-image: url("/assets/img/img1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.gypna-about-us-aim-img {
+    background-image: url("/assets/img/img-2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.aboutus-section-left-wraper {
+    background: url("/assets/img/1px-f1.png") repeat-y;
+    background-position: leeft;
+    background-size: 50% auto;
+    width: 100%;
+}
+
+.aboutus-section-right-wraper {
+    background: url("/assets/img/1px-f1.png") repeat-y;
+    background-position: right;
+    background-size: 50% auto;
+    width: 100%;
+}

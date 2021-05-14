@@ -19,9 +19,9 @@ class SetLocale
     {
         if($request->locale && in_array($request->locale, config('localization.lan'))) {
             App::setLocale($request->locale);
-        } /*else {
+        }else {
             App::setLocale('ka');
-        }*/
+        }
         
         return $next($request);
     }

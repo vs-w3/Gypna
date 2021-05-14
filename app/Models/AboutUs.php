@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
-class Speciality extends Model implements TranslatableContract
+class AboutUs extends Model implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
 
-    public $translatedAttributes = ['name'];
+    public $translatedAttributes = ['title', 'body'];
     
 }

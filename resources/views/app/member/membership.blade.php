@@ -22,12 +22,12 @@
                 12 - filling date
                 -->
                 <div class="flex">
-                    <x-parts.input-text-label id="fname" labelTitle="First Name" name="fname" placeholder="First Name" />
-                    <x-parts.input-text-label id="lname" labelTitle="Last Name" name="lname" placeholder="Last Name" />
+                    <x-partials.form.input-text-label id="fname" labelTitle="First Name" name="fname" placeholder="First Name" />
+                    <x-partials.form.input-text-label id="lname" labelTitle="Last Name" name="lname" placeholder="Last Name" />
                 </div>
                 <div class="flex">
-                    <x-parts.input-text-label id="fname" labelTitle="First Name" name="fname" placeholder="First Name" />
-                    <x-parts.input-text-label id="pnumber" labelTitle="Private Number" name="pnumber" placeholder="Private Number" />
+                    <x-partials.form.input-text-label id="fname" labelTitle="First Name" name="fname" placeholder="First Name" />
+                    <x-partials.form.input-text-label id="pnumber" labelTitle="Private Number" name="pnumber" placeholder="Private Number" />
                 </div>
             </section>
 

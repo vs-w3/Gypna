@@ -13,6 +13,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+ 
 
         @livewireStyles
 
@@ -22,10 +23,18 @@
     </head>
     <body>
         
-        <x-sections.header />
+        <x-sections.admin.header />
+        <div class="flex h-screen">
+            <x-sections.admin.left-nav />
+            <div class="p-20 w-full">
+                {{ $slot }}
+            </div>
+            
+        </div>
+        
+        
 
-        {{ $slot }}
-
+        <!-- App scripts -->
         @livewireScripts
     </body>
 </html>

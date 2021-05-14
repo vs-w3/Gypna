@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SpecialityRequest;
+use App\Managers\TranslationManager;
+use App\Models\Post;
 use App\Models\Speciality;
-use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\App;
 
 class SpecialityController extends Controller
 {
@@ -13,45 +17,39 @@ class SpecialityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getSpecialities()
-    { 
-        $speciality = Speciality::first();
-        Speciality::create([
-            'ka' => ['name' => 'ნეონატოლოგია'],
-            'en' => ['name' => 'Neonatoogy'],
-        ]);
+    {
+        $specialities = new Speciality();
+
+        return view('admin.speciality.index')
+            ->with('model', $specialities)
+            ->with('setting', 'speciality');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Create speciality form page
+     * 
+     * 
      */
-    public function create()
+    public function getAddSpeciality()
     {
-        //
+        return view('admin.speciality.add');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store speciality
+     * 
      */
-    public function store(Request $request)
+    public function postAddSpeciality(SpecialityRequest $request)
     {
-        //
+        $speciality = new Speciality();
+        $speciality->getTranslationOrNew('ka')->name = $request->input('name_ka');
+        $request->input('name_en') !== null ? $speciality->getTranslationOrNew('en')->name = $request->input('name_en') : '';
+        
+        $speciality->save();
+        return redirect(url('admin/specialities'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Speciality  $speciality
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Speciality $speciality)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -59,10 +57,11 @@ class SpecialityController extends Controller
      * @param  \App\Models\Speciality  $speciality
      * @return \Illuminate\Http\Response
      */
-    public function edit(Speciality $speciality)
+    public function getEditSpeciality(Speciality $speciality)
     {
-        //
-    }
+        return view('admin.speciality.edit')->with('speciality', $speciality);
+    }   
+
 
     /**
      * Update the specified resource in storage.
@@ -71,9 +70,13 @@ class SpecialityController extends Controller
      * @param  \App\Models\Speciality  $speciality
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Speciality $speciality)
+    public function postEditSpeciality(SpecialityRequest $request, Speciality $speciality)
     {
-        //
+
+        $speciality->getTranslation('ka')->name = $request->input('name_ka');
+        $request->input('name_en') !== null ? $speciality->getTranslationOrNew('en')->name = $request->input('name_en') : '';
+        $speciality->save();
+        return redirect(url('admin/specialities'));
     }
 
     /**
@@ -82,8 +85,9 @@ class SpecialityController extends Controller
      * @param  \App\Models\Speciality  $speciality
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Speciality $speciality)
+    public function getDeleteSpeciality(Speciality $speciality)
     {
-        //
+        $speciality->delete();
+        return back();
     }
 }
