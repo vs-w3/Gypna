@@ -27,6 +27,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'userable_id',
+        'userable_type'
     ];
 
     /**
@@ -58,4 +60,23 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+
+
+
+    /**
+     * Relationships
+     */
+ 
+    public function userable()
+    {
+        return $this->morphTo();
+    }
+
+    public function specialities()
+    {
+        return $this->belongsToMany(Speciality::class, 'speciality_users')->withPivot('id');
+    }
+    
 }

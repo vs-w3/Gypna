@@ -13,5 +13,17 @@ class Speciality extends Model implements TranslatableContract
     use Translatable;
 
     public $translatedAttributes = ['name'];
+
+
+
+
+
+    /**
+     * Relationships
+     */
+    public function doctors()
+    {
+        return $this->belongsToMany(User::class);
+    }
     
 }

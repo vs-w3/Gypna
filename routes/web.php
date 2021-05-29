@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SpecialityController;
+use App\Http\Controllers\SpecialityUserController;
 use App\Models\Speciality;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
@@ -66,6 +68,16 @@ Route::group(['prefix' => '{locale?}', 'where' => ['locale' => 'ka|en']], functi
     * ------------------------------------------------------------------------
     */
     Route::get('aboutus',                     [AboutUsController::class, 'index']);
+
+    /**
+    * ------------------------------------------------------------------------
+    * Profile Routes
+    * ------------------------------------------------------------------------
+    */
+    Route::get('profile',                     [ProfileController::class, 'index']);
+    
+    Route::get('add/user/speciality',         [SpecialityUserController::class, 'getAddSpecialityUser'])->name('addUserSpeciality');
+    Route::post('add/user/speciality',        [SpecialityUserController::class, 'postAddSpecialityUser']);
 
 });
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Managers\AboutUsManager;
+use App\Models\AboutUs;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -13,7 +15,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        return view('app.main.index');
+        return view('app.main.index')
+            ->with('intro', AboutUsManager::getIntro());
     }
 
     /**

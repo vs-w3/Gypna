@@ -3,6 +3,18 @@
     @csrf
     
     <div class="w-full">
+
+        <div class="my-10">
+            <label class="block mb-2 font-semibold text-lg text-nt-3" for="type">Type</label>
+            <select name="cat_id" id="type">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}" @if ($current->id == $category->id) {{ 'selected' }} @endif >
+                        {{ $category->identifier }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        
         <div class="w-full border rounded-md" x-data="{ tab: 'ka' }">
             <div class="flex px-5 py-3 border-b bg-gray-50  ">
                 <p :class="{ 'bg-gray-300': tab === 'ka'}" class="px-5 border cursor-pointer" @click="tab = 'ka'">KA</p>

@@ -24,6 +24,8 @@ class AboutUsRequest extends FormRequest
     public function rules()
     {
         return [
+            'cat_id' => 'required|integer',
+            
             'title_ka' => 'required|string',
             'body_ka' => 'required|string',
 

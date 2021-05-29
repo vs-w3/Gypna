@@ -12089,16 +12089,42 @@ select {
   border-top-left-radius: 1.5rem;
 }
 
+.rounded-tl-4xl {
+  border-top-left-radius: 4rem;
+}
+
+
+
 .rounded-tr-3xl {
   border-top-right-radius: 1.5rem;
+}
+
+.rounded-tr-5xl {
+  border-top-right-radius: 5rem;
+}
+
+.rounded-tr-8xl {
+  border-top-right-radius: 8rem;
 }
 
 .rounded-br-3xl {
   border-bottom-right-radius: 1.5rem;
 }
 
+.rounded-br-4xl {
+  border-bottom-right-radius: 4rem;
+}
+
 .rounded-bl-3xl {
   border-bottom-left-radius: 1.5rem;
+}
+
+.rounded-bl-4xl {
+  border-bottom-left-radius: 4rem;
+}
+
+.rounded-bl-5xl {
+  border-bottom-left-radius: 5rem;
 }
 
 .rounded-tl-full {

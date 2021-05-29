@@ -27,5 +27,8 @@
         {{ $slot }}
 
         @livewireScripts
+
+        <x-sections.footer />
     </body>
+    <script src="{{ asset('js/main.js') }}" defer></script>
 </html>

@@ -13,10 +13,19 @@ class CreateAboutUsTable extends Migration
      */
     public function up()
     {
+        Schema::create('about_us_cats', function (Blueprint $table) {
+            $table->id();
+            $table->string('identifier');
+            $table->timestamps();
+        });
+        
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('cat_id');
             $table->string('img')->nullable();
             $table->timestamps();
+
+            $table->foreign('cat_id')->references('id')->on('about_us_cats')->onDelete('cascade');
         });
 
         Schema::create('about_us_translations', function (Blueprint $table) {

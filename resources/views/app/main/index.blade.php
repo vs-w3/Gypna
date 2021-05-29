@@ -1,15 +1,12 @@
 <x-layouts.main>
     <main class="">
-        <div class="gypna-main-sec-1">
-            <section class="lg:container lg:mx-auto lg:h-screen pt-20">
-                1q
-            </section>
-        </div>
+        <x-sections.main.section-intro :intro="$intro" />
 
+        <x-sections.main.section-event />
 
-        <section class="bg-blue-500 h-40">
-            1
-        </section>
+        <x-sections.main.section-member />
+
+        <x-sections.main.section-partner />
 
     </main>
 </x-layouts.main>    
