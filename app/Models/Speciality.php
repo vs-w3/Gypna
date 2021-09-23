@@ -23,7 +23,12 @@ class Speciality extends Model implements TranslatableContract
      */
     public function doctors()
     {
-        return $this->belongsToMany(User::class);
+        return $this->morphedByMany(User::class, 'specialityable');
+    }
+
+    public function topics()
+    {
+        //return $this->morphedByMany()
     }
     
 }

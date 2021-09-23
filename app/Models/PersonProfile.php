@@ -33,8 +33,8 @@ class PersonProfile extends Model implements TranslatableContract
         return $this->hasMany(Job::class);
     }
 
-    public function address()
+    public function addresses()
     {
-        return $this->morphMany(Address::class, 'addressable');
+        return $this->morphToMany(Address::class, 'addressable');
     }
 }

@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             AboutUsCatSeeder::class,
             AboutUsSeeder::class,
             SpecialitySeeder::class,
+            RegionSeeder::class,
+            CitySeeder::class,
+            AddressTypeSeeder::class,
         ]);
     }
 }

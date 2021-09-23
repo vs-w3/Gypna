@@ -1,0 +1,29 @@
+
+/*@font-face {
+    font-family: "Segoe UI";
+    src: url("/assets/fonts/Segoe_UI.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "helveticaNeue75";
+    src: url("/assets/fonts/Helvetica\ Neue\ LT\ Std\ 75\ Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "limelight";
+    src: url("/assets/fonts/Limelight-Regular.ttf");
+    font-weight:normal;
+}*/
+/* Inter */
+@font-face {
+    font-family: "inter";
+    src: url("/assets/fonts/inter/Inter-Regular.ttf");
+    font-weight:normal;
+}
+
+@font-face {
+    font-family: "alk";
+    src: url("/assets/fonts/alk_sanet/alk.ttf");
+    font-weight:normal;
+}

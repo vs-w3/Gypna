@@ -18,6 +18,8 @@ class CreatePersonProfilesTable extends Migration
             $table->date('birth_date')->nullable();
             $table->string('id_number')->unique()->nullable();
             $table->string('img')->nullable();
+            $table->boolean('public_birth_date')->default(0);
+            $table->boolean('public_id_number')->default(0);
             $table->timestamps();
         });
 

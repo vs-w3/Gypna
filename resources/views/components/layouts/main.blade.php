@@ -7,28 +7,26 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <!-- SEO & Other Tools -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-
         @livewireStyles
+        @trixassets
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script type="module" src="{{ mix('js/app.js') }}"></script>
+
+        <!-- FontAwasome Icons -->
         <script src="https://kit.fontawesome.com/3e940c6fa5.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-        
+    <body class="pt-20">
         <x-sections.header />
 
         {{ $slot }}
-
-        @livewireScripts
-
+       
         <x-sections.footer />
+        @livewireScripts
     </body>
-    <script src="{{ asset('js/main.js') }}" defer></script>
 </html>

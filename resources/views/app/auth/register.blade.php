@@ -9,9 +9,9 @@
                     @csrf
                     <!--<x-partials.form.auth-input-select name="user_type" />-->
                     <x-partials.auth.registration-name-section />
-                    <x-partials.form.auth-input-text name="email" type="email" placeholder="Email" />
-                    <x-partials.form.auth-input-text name="password" type="password" placeholder="Password" />
-                    <x-partials.form.auth-input-text name="password_confirmation" type="password" placeholder="Repeat Password" />
+                    <x-forms.auth-input-text name="email" type="email" placeholder="Email" />
+                    <x-forms.auth-input-text name="password" type="password" placeholder="Password" />
+                    <x-forms.auth-input-text name="password_confirmation" type="password" placeholder="Repeat Password" />
             
             
                 <div class="flex items-center justify-end mt-4">

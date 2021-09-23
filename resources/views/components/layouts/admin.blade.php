@@ -16,6 +16,7 @@
  
 
         @livewireStyles
+        @trixassets
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
@@ -24,8 +25,8 @@
     <body>
         
         <x-sections.admin.header />
-        <div class="flex h-screen">
-            <x-sections.admin.left-nav />
+        <div class="flex">
+            <x-sections.admin.admin-left-nav />
             <div class="p-20 w-full">
                 {{ $slot }}
             </div>

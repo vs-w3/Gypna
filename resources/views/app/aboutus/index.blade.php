@@ -4,7 +4,7 @@
         <div class="aboutus-section-left-wraper py-20">
             <div class="container mb-20 mx-auto flex">
                 <div class="w-1/2 px-20">
-                    <h1 class="my-10 text-6xl text-center">{{ $aboutus->title}}</h1>
+                    <h1 class="my-10 text-6xl text-center font-inter">{{ $aboutus->title}}</h1>
                     <p>
                         {{ $aboutus->body }}
                     </p>

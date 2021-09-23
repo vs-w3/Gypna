@@ -4,7 +4,7 @@
         Login
     </button>
     <div x-show.transition="show" @click.away="show = false" 
-        class="absolute right-0 bg-white h-full w-96 p-5 z-50">
+        class="absolute top-20 right-0 bg-white h-auto w-96 p-5 z-50 shadow-lg">
         
         <div class="" x-data="{ tab: 'login' }">
             <div class="my-10 flex items-stretch">

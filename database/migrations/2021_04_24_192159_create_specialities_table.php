@@ -25,7 +25,6 @@ class CreateSpecialitiesTable extends Migration
 
             $table->string('name');
 
-            //$table->index('locale');
             $table->unique(['speciality_id', 'locale']);
             $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade');
         });

@@ -4,11 +4,17 @@
         {{ auth()->user()->name }}
     </button>
     <!-- Menu -->
-    <div x-show.transition="show" @click.away="show = false" 
-        class="absolute right-0 bg-white h-full w-96 p-5 z-50">
-        <ul>
-            <li><a href="{{ url(app()->getlocale() . '/' . 'profile') }}">Profile</a></li>
-            <li><a href="{{ url(app()->getlocale() . '/' . 'add/user/speciality') }}">Speciality</a></li>
+    <div class="absolute top-20 right-0 bg-white h-auto w-96 p-5 z-50 shadow-lg"
+        x-show.transition="show" 
+        @click.away="show = false" >
+        <ul class="mt-5 text-lg font-inter">
+            @if (auth()->user()->userable_type == 'App\Models\PersonProfile')
+                <x-dynamic-component component="partials.profile.personal.dd" />
+            @elseif (auth()->user()->userable_type == 'App\Models\CompanyProfile')
+                <x-dynamic-component component="partials.profile.company.dd" />
+            @endif
+            
+            
         </ul>
         
         <div class="mt-10 pt-1 border-t">

@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 //use App\Models\Profile;
 
 use App\Managers\ProfileManager;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
+
+    public function __controller()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -48,12 +55,18 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Profile  $profile
+     * @param  \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($locale, User $user)
     {
-        //
+        //$user = $profile->user; Profi
+        //dd($user);
+        
+        return view('app.profile.index')
+            ->with('user', $user)
+            ->with('navComponent',  ProfileManager::navComponent($user->userable_type))
+            ->with('mainComponent', ProfileManager::mainComponent($user->userable_type));
     }
 
     /**

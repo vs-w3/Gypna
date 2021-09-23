@@ -15,13 +15,14 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('addressable_id');
-            $table->string('addressable_type');
+            $table->unsignedBigInteger('address_type_id');
             $table->unsignedBigInteger('region_id');
             $table->unsignedBigInteger('city_id');
-            $table->boolean('actual');
             $table->string('postal_code');
+            $table->boolean('public')->default(0);
             $table->timestamps();
+            
+            $table->foreign('address_type_id')->references('id')->on('address_types')->onDelete('cascade');
         });
 
         Schema::create('address_translations', function (Blueprint $table) {
@@ -31,6 +32,17 @@ class CreateAddressesTable extends Migration
             $table->string('body');
 
             $table->unique(['address_id', 'locale']);
+            $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');
+        });
+
+        Schema::create('addressables', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('address_id');
+            $table->unsignedBigInteger('addressable_id');
+            $table->string('addressable_type');
+            $table->timestamps();
+
+            $table->unique(['address_id', 'addressable_id', 'addressable_type']);
             $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');
         });
     }

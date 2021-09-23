@@ -76,7 +76,7 @@ class User extends Authenticatable
 
     public function specialities()
     {
-        return $this->belongsToMany(Speciality::class, 'speciality_users')->withPivot('id');
+        return $this->morphToMany(Speciality::class, 'specialityable');
     }
     
 }

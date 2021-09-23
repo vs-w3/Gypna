@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -14,7 +15,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        return view('app.member.index');
     }
 
     /**
@@ -25,6 +26,7 @@ class MemberController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -41,12 +43,13 @@ class MemberController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Member  $member
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Member $member)
+    public function show($locale, User $user)
     {
-        //
+        return view('app.member.show')
+            ->with('user', $user);
     }
 
     /**

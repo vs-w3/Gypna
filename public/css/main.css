@@ -1,30 +1,29 @@
 @import url("nt-colors.css");
 @import url("v2-colors.css");
-
+/*
+.cc {
+    font-family: "Segoe UI";
+    font-size: 100px;
+}*/
 .gypna-main-sec-1 {
     background-image: url("/assets/design/sec-1-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
 }
-
 
 .gypna-page-hood {
-        background-image: url("/assets/design/page-hood-bg.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position:bottom;
+    background-image: url("/assets/design/page-hood-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
-
-
 
 .gypna-section-2-left-wraper {
     background-image: url("/assets/design/sec-2-left-bg.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
-    
 }
 
 .gypna-section-member {
@@ -33,15 +32,10 @@
     background-size: contain;
 }
 
-
-
-
 .input-border {
-    border-left: 1px solid #5BB250;
-    border-bottom: 1px solid #5BB250;
+    border-left: 1px solid #5bb250;
+    border-bottom: 1px solid #5bb250;
 }
-
-
 
 .footer {
     background-image: url("/assets/design/footer-bg.png");
@@ -55,22 +49,21 @@
 }
 */
 
-
-
-
-.auth-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #fff;
+.auth-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
 }
 
-.auth-input::-ms-input-placeholder { /* Microsoft Edge */
-  color: #fff;
+.auth-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
 }
 
 .auth-input:focus {
     outline: none !important;
-    border-color: #BEE2B9;
-    border: 1px solid #BEE2B9;
-    box-shadow: 0 0 0 #BEE2B9; 
+    border-color: #bee2b9;
+    border: 1px solid #bee2b9;
+    box-shadow: 0 0 0 #bee2b9;
     outline: 0 !important;
 }
 
@@ -79,7 +72,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 /*
     Profile

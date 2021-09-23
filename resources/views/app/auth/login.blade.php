@@ -9,9 +9,9 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                 
-                    <x-partials.form.auth-input-text name="email" type="email" placeholder="Email" />
-                    <x-partials.form.auth-input-text name="password" type="password" placeholder="Password" />
-                    <x-partials.form.auth-input-checkbox id="remember_me" name="remember" label="Remeber Me" />
+                    <x-forms.auth-input-text name="email" type="email" placeholder="Email" />
+                    <x-forms.auth-input-text name="password" type="password" placeholder="Password" />
+                    <x-forms.auth-input-checkbox id="remember_me" name="remember" label="Remeber Me" />
             
             
                 

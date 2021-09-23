@@ -4,6 +4,6 @@
         <a href="{{ url('admin/add/speciality') }}" class="bg-nt-14 rounded-md py-3 px-5 cursoir-pointer text-white font-semibold">Add</a>
     </div>
     
-    <livewire:datatable :model="$model" :setting="$setting" /> 
+    <livewire:tables.speciality /> 
 
 </x-layouts.admin>
